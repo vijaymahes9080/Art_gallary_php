@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	  <head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Art Gallery | Admin Panel</title>
+			<link href="../images/icon.png" rel="icon">
+			<link href="../css/bootstrap.min.css" rel="stylesheet">
+			<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+			<link href="style.css" rel="stylesheet">
+	  </head>
+	  <body>
+		<div class="container-fluid">
+			<div class="row header">
+				<div class="col-md-9"><h3>Art Gallery Admin Panel</h3></div>
+				<div class="col-md-3">
+					<ul class="user-nav">
+						<li class="dropdown user-icon">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#fff; text-decoration:none;">
+							<span>Hi, <span id="adminName">Admin</span></span> <span class="glyphicon glyphicon-user"></span>  <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#"><span class="glyphicon glyphicon-user"></span> User Profile</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+								<li class="divider"></li>
+								<li class="logout-li" style="padding: 5px 20px;">
+									<button id="adminLogoutBtn" class="btn btn-default btn-block"><span class="glyphicon glyphicon-log-out"></span> Logout</button>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row center-container" style="margin-top:20px;">
+				<div class="col-md-2 left-nav">
+					<ul class="nav nav-stacked left-menu">
+						<li role="presentation"><a href="#dashboard" class="active">Dashboard</a></li>
+						<li role="presentation"><a href="#home">Home (Slider)</a></li>
+						<li role="presentation"><a href="#about">About us</a></li>
+						<li role="presentation"><a href="#reach_us">Reach us</a></li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<div class="pages center-container">
+						
+						<!-- Dashboard / Social Links -->
+						<div id="dashboard" class="switchgroup dashboard">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3>Dashboard</h3>
+								</div>
+								<div class="panel-body">
+									<div class="panel panel-default social-links">
+										<div class="panel-heading">
+											<h4>Social Links</h4>
+										</div>
+										<div class="panel-body">
+											<form class="form-inline social-form" data-type="facebook">
+											  <div class="form-group">
+												<div class="input-group">
+												  <div class="input-group-addon" style="width:100px;">Facebook</div>
+												  <input type="text" name="facebook" class="form-control" style="width:300px;">
+												</div>
+											  </div>
+											  <button type="submit" class="btn btn-success">Update</button>
+											  <span class="text-success fb-msg" style="padding-left:10px"></span>
+											</form>
+											<br/>
+											<form class="form-inline social-form" data-type="twitter">
+											  <div class="form-group">
+												<div class="input-group">
+												  <div class="input-group-addon" style="width:100px;">Twitter</div>
+												  <input type="text" name="twitter" class="form-control" style="width:300px;">
+												</div>
+											  </div>
+											  <button type="submit" class="btn btn-success">Update</button>
+											  <span class="text-success twi-msg" style="padding-left:10px"></span>
+											</form>
+											<br/>
+											<form class="form-inline social-form" data-type="linkedin">
+											  <div class="form-group">
+												<div class="input-group">
+												  <div class="input-group-addon" style="width:100px;">LinkedIn</div>
+												  <input type="text" name="linkedin" class="form-control" style="width:300px;">
+												</div>
+											  </div>
+											  <button type="submit" class="btn btn-success">Update</button>
+											  <span class="text-success lin-msg" style="padding-left:10px"></span>
+											</form>
+											<br/>
+											<form class="form-inline social-form" data-type="insta">
+											  <div class="form-group">
+												<div class="input-group">
+												  <div class="input-group-addon" style="width:100px;">Instagram</div>
+												  <input type="text" name="insta" class="form-control" style="width:300px;">
+												</div>
+											  </div>
+											  <button type="submit" class="btn btn-success">Update</button>
+											  <span class="text-success inst-msg" style="padding-left:10px"></span>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Home / Slider Content -->
+						<div id="home" class="switchgroup dashboard" style="display:none;">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3>Home Slider Images</h3>
+								</div>
+								<div class="panel-body">
+									<div class="panel panel-default slider-content">
+										<div class="panel-heading">
+											<h4>Slider Content
+												<a href="#" class="pull-right" data-toggle="modal" data-target="#slider_img_add">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span></a>
+											</h4>
+										</div>
+										<div class="panel-body">
+											<div id="sliderList">
+												<!-- Dynamically Populated -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+                        <!-- About us content -->
+						<div id="about" class="switchgroup dashboard" style="display:none;">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3>About us</h3>
+								</div>
+								<div class="panel-body">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4>About us Content</h4>
+										</div>
+										<div class="panel-body">
+											<form id="aboutUsForm">
+												<div class="form-group">
+												  <textarea class="form-control" rows="10" name="info" id="myInfo" style="width:100%;"></textarea>
+												</div>
+												<span class="text-success about-msg"></span>
+												<br/>
+												<div class="form-group">
+													<button type="submit" class="btn btn-success">Update</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        
+                        <!-- Reach us / Address -->
+						<div id="reach_us" class="switchgroup dashboard" style="display:none;">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3>Reach us</h3>
+								</div>
+								<div class="panel-body">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4>Address Details</h4>
+										</div>
+										<div class="panel-body">
+											<form id="reachUsForm">
+											  <div class="form-group">
+												<label>Name</label>
+												<input type="text" name="reach_nm" class="form-control" style="width:400px;" required>
+											  </div>
+											  <div class="form-group">
+												<label>Address 1</label>
+												<input type="text" name="reach_add1" class="form-control" style="width:400px;" required>
+											  </div>
+											  <div class="form-group">
+												<label>Address 2</label>
+												<input type="text" name="reach_add2" class="form-control" style="width:400px;">
+											  </div>
+											  <div class="form-group">
+												<label>City</label>
+												<input type="text" name="reach_city" class="form-control" style="width:400px;" required>
+											  </div>
+											  <div class="form-group">
+												<label>Zipcode</label>
+												<input type="text" name="reach_zip" class="form-control" style="width:400px;" required>
+											  </div>
+											  <div class="form-group">
+												<label>State</label>
+												<input type="text" name="reach_state" class="form-control" style="width:400px;" required>
+											  </div>
+											  <div class="form-group">
+												<label>Contact No.</label>
+												<input type="text" name="contact_no" class="form-control" style="width:400px;" required>
+											  </div>
+											  <button type="submit" class="btn btn-success">Update</button>
+											  <span class="text-success address-msg" style="padding-left:10px"></span>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Add Slider Modal -->
+		<div class="modal fade" id="slider_img_add" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Add Slider Image</h4>
+			  </div>
+			  <form id="addSliderForm">
+				  <div class="modal-body">
+						<div class="form-group">
+							<label>Select Local Image File (PNG/JPG)</label>
+							<input type="file" id="newSliderFile" class="form-control" accept="image/*" required>
+						</div>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Add</button>
+				  </div>
+			  </form>
+			</div>
+		  </div>
+		</div>
+
+		<!-- Scripts -->
+		<script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/database.js"></script>
+		<script>
+			$(document).ready(function() {
+				// 1. Session check
+				const admin = window.AG_DB.getCurrentAdmin();
+				if (!admin) {
+					window.location.href = 'index.html';
+					return;
+				}
+				$('#adminName').text(admin.name);
+
+				// 2. Tab switching logic
+				$('.left-menu li a').click(function(e) {
+					e.preventDefault();
+					$('.left-menu li a').removeClass('active');
+					$(this).addClass('active');
+					
+					const target = $(this).attr('href');
+					$('.switchgroup').hide();
+					$(target).fadeIn(500);
+				});
+
+				// 3. Populate Social Media Links
+				function populateSocialLinks() {
+					const social = window.AG_DB.getSocialMedia();
+					$('input[name="facebook"]').val(social.facebook);
+					$('input[name="twitter"]').val(social.twitter);
+					$('input[name="linkedin"]').val(social.linkedin);
+					$('input[name="insta"]').val(social.insta);
+				}
+				populateSocialLinks();
+
+				// Save Social Link form
+				$('.social-form').submit(function(e) {
+					e.preventDefault();
+					const type = $(this).data('type');
+					const val = $(this).find('input').val();
+					const social = window.AG_DB.getSocialMedia();
+					social[type] = val;
+					window.AG_DB.saveSocialMedia(social);
+					
+					const msgSpan = $(this).find('.text-success');
+					msgSpan.text("Update Successfully...").show().fadeOut(3000);
+				});
+
+				// 4. Populate About Us
+				$('#myInfo').val(window.AG_DB.getAboutUs());
+				$('#aboutUsForm').submit(function(e) {
+					e.preventDefault();
+					const text = $('#myInfo').val();
+					window.AG_DB.saveAboutUs(text);
+					$('.about-msg').text("Update Successfully...").show().fadeOut(3000);
+				});
+
+				// 5. Populate Reach Us
+				const contact = window.AG_DB.getReachUs();
+				$('input[name="reach_nm"]').val(contact.nm);
+				$('input[name="reach_add1"]').val(contact.add1);
+				$('input[name="reach_add2"]').val(contact.add2);
+				$('input[name="reach_city"]').val(contact.city);
+				$('input[name="reach_zip"]').val(contact.zipcode);
+				$('input[name="reach_state"]').val(contact.state);
+				$('input[name="contact_no"]').val(contact.contact_no);
+
+				$('#reachUsForm').submit(function(e) {
+					e.preventDefault();
+					const data = {
+						nm: $('input[name="reach_nm"]').val(),
+						add1: $('input[name="reach_add1"]').val(),
+						add2: $('input[name="reach_add2"]').val(),
+						city: $('input[name="reach_city"]').val(),
+						zipcode: $('input[name="reach_zip"]').val(),
+						state: $('input[name="reach_state"]').val(),
+						contact_no: $('input[name="contact_no"]').val()
+					};
+					window.AG_DB.saveReachUs(data);
+					$('.address-msg').text("Update Successfully...").show().fadeOut(3000);
+				});
+
+				// 6. Slider Management
+				function renderSliderList() {
+					const slider = window.AG_DB.getSlider();
+					let html = '';
+					slider.forEach(item => {
+						html += `
+							<div class="row" style="margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;" data-id="${item.id}">
+								<div class="col-md-2">
+									<img src="../${item.path.startsWith('images') ? item.path : 'images/' + item.img_nm}" alt="${item.img_nm}" style="width:60px; height:60px; object-fit:cover; border:1px solid #ddd;"/>
+								</div>
+								<div class="col-md-6" style="padding-top:15px;">
+									<strong>${item.img_nm}</strong>
+								</div>
+								<div class="col-md-4" style="padding-top:12px;">
+									<button class="btn btn-danger delete-slider-btn"><span class="glyphicon glyphicon-remove"></span> Delete</button>
+								</div>
+							</div>
+						`;
+					});
+					$('#sliderList').html(html || '<p style="color:#aaa;">No slider images found</p>');
+
+					$('.delete-slider-btn').click(function() {
+						const id = $(this).closest('.row').data('id');
+						let slider = window.AG_DB.getSlider();
+						slider = slider.filter(item => item.id !== id);
+						window.AG_DB.saveSlider(slider);
+						renderSliderList();
+					});
+				}
+				renderSliderList();
+
+				// Add Slider Image form
+				$('#addSliderForm').submit(function(e) {
+					e.preventDefault();
+					const fileInput = document.getElementById('newSliderFile');
+					if (fileInput.files.length > 0) {
+						const file = fileInput.files[0];
+						const reader = new FileReader();
+						reader.onload = function(evt) {
+							const base64 = evt.target.result;
+							const slider = window.AG_DB.getSlider();
+							const newId = slider.length > 0 ? Math.max(...slider.map(s => s.id)) + 1 : 1;
+							
+							slider.push({
+								id: newId,
+								img_nm: file.name,
+								path: base64 // base64 string works natively as <img src="data:..."/>
+							});
+							window.AG_DB.saveSlider(slider);
+							renderSliderList();
+							$('#slider_img_add').modal('hide');
+							$('#addSliderForm').trigger('reset');
+						};
+						reader.readAsDataURL(file);
+					}
+				});
+
+				// 7. Logout Admin
+				$('#adminLogoutBtn').click(function() {
+					window.AG_DB.logoutAdmin();
+					window.location.href = 'index.html';
+				});
+			});
+		</script>
+	  </body>
+</html>

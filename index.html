@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Art Gallery | Home</title>
+    <link href="images/icon.png" rel="icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body>
+  
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog popup" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="panel panel-default">
+              <div class="panel-heading" style="text-align:center">New Registration</div>
+              <div class="panel-body">
+                <form class="form-horizontal" role="form" id="register" method="post">
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="FirstName">First Name</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" name="fnm" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="col-sm-1"><span class="val_err">*</span></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="LastName">Last Name</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" name="lnm" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="col-sm-1"><span class="val_err">*</span></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-3">Gender</label>
+                    <div class="col-sm-8">
+                      <label class="radio-inline"><input type="radio" name="gender" value="Male" required>Male</label>
+                      <label class="radio-inline"><input type="radio" name="gender" value="Female" required>Female</label>
+                    </div>
+                    <div class="col-sm-1"><span class="val_err">*</span></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="ContactNo">Contact No</label>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" name="contact" placeholder="Enter Contact No" required>
+                    </div>
+                    <div class="col-sm-1"><span class="val_err">*</span></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="email">Email</label>
+                    <div class="col-sm-8">
+                      <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="col-sm-1"><span class="val_err">*</span></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="pwd">Set Password</label>
+                    <div class="col-sm-8"> 
+                      <input type="password" class="form-control" name="pwd" placeholder="Enter password" required>
+                    </div>
+                    <div class="col-sm-1"><span class="val_err">*</span></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="conpwd">Confirm Password</label>
+                    <div class="col-sm-8"> 
+                      <input type="password" class="form-control" name="confirmpwd" placeholder="Enter confirm password" required>
+                    </div>
+                    <div class="col-sm-1"><span class="val_err">*</span></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="address">Address</label>
+                    <div class="col-sm-8"> 
+                      <input type="text" class="form-control" name="add1" placeholder="Address 1" required>
+                      <input type="text" class="form-control" name="add2" placeholder="Address 2">
+                      <input type="text" class="form-control" name="add3" placeholder="Address 3 (Optional)">
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="col-sm-offset-3 col-sm-9">
+                      <button type="submit" name="registerClick" id="registerClick" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="panel panel-default">
+              <div class="panel-heading" style="text-align:center">Log In</div>
+              <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label class="control-label col-sm-3">Email</label>
+                    <div class="col-sm-9">
+                      <input type="email" class="form-control" id="username" placeholder="Enter Email" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-3">Password</label>
+                    <div class="col-sm-9">
+                      <input type="password" class="form-control" name="pass" placeholder="Enter Password" required>
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="col-sm-offset-3 col-sm-9">
+                      <button type="submit" class="btn btn-primary">Login</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        
+    <!-- Social Icons -->
+    <div class="social-icon-area">
+      <ul class="social-icons">
+        <li><a href="#" class="btn azm-social azm-size-48 azm-long-shadow azm-facebook"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#" class="btn azm-social azm-size-48 azm-long-shadow azm-twitter"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#" class="btn azm-social azm-size-48 azm-long-shadow azm-linkedin"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="#" class="btn azm-social azm-size-48 azm-long-shadow azm-instagram"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Art Gallery</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right signup">
+            <li><button id="signlog" data-toggle="modal" data-target="#signup" style="padding-top:11.5px"><span class="glyphicon glyphicon-user"></span> Sign Up</button></li>
+            <li><button id="signlog" data-toggle="modal" data-target="#signin"><span class="glyphicon glyphicon-log-in"></span> Login</button></li>
+            <li>
+              <form class="navbar-form navbar-left">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for product">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right top_menu">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about_us.html">About us</a></li>
+            <li class="dropdown">
+              <a href="arts.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arts <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="arts.html">Oil Paintings</a></li>
+                <li><a href="arts.html">Water Paintings</a></li>
+                <li><a href="arts.html">Artices Special</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="arts.html">Gallery</a></li>
+              </ul>
+            </li>
+            <li><a href="contact_us.html">Reach us</a></li>
+            <li><a href="cart.html">Cart us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container-fluid">
+      <div class="row slider">
+        <div class="col-lg-14">			
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img src="images/1.jpg" alt="Gallery Slide 1">
+              </div>
+              <div class="item">
+                <img src="images/2.jpg" alt="Gallery Slide 2">
+              </div>
+              <div class="item">
+                <img src="images/3.jpg" alt="Gallery Slide 3">
+              </div>
+            </div>
+            
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row home_info">
+        <div class="col-md-9 recent_product">
+          <div class="panel panel-default">
+            <div class="panel-heading">Recent Products</div>
+            <div class="panel-body">
+              <div class="container recent_product_container" style="width:100%;">
+                <div class="row recent_img">
+                  <div class="col-md-4"><img src="images/Taj Mahal.jpeg" class="img-thumbnail home_img" alt="Taj Mahal"></div>
+                  <div class="col-md-4"><img src="images/Mona Lisa.png" class="img-thumbnail home_img" alt="Mona Lisa"></div>
+                  <div class="col-md-4"><img src="images/Krishna with Gopi's.Jpg" class="img-thumbnail home_img" alt="Krishna with Gopi's"></div>
+                </div>
+                <div class="row recent_img_desc">
+                  <div class="col-md-4">Taj Mahal (Rs. 250)</div>
+                  <div class="col-md-4">Mona Lisa (Rs. 300)</div>
+                  <div class="col-md-4">Krishna with Gopi's (Rs. 400)</div>
+                </div>
+                <div class="row recent_img_desc" style="margin-top:10px;">
+                  <div class="col-md-4"><button type="button" class="btn btn-primary btn-add-cart" data-id="1">Add Cart</button></div>
+                  <div class="col-md-4"><button type="button" class="btn btn-primary btn-add-cart" data-id="2">Add Cart</button></div>
+                  <div class="col-md-4"><button type="button" class="btn btn-primary btn-add-cart" data-id="3">Add Cart</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 my_cart_container">
+          <div class="my_cart">
+            <h3>MyCart</h3>
+            <div class="cart_items">
+              <ol>
+                <!-- Dynamically Hydrated by app.js -->
+              </ol>
+            </div>
+          </div>
+        </div>	
+      </div>
+
+      <!-- Footer Area -->
+      <div class="row footer">
+        <div class="col-md-12">
+          <div class="row inner_footer">
+            <div class="col-md-3 quick_links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About us</a></li>
+                <li><a href="arts.html">Arts</a></li>
+                <li><a href="contact_us.html">Reach us</a></li>
+              </ul>
+            </div>
+            <div class="col-md-9 email_subscriber">
+              <h3>Email Subscriber</h3>
+              <form method="post" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+                <input type="email" name="email_subscriber" placeholder="Email" required/><br />
+                <input type="submit" value="Subscriber" />
+              </form>
+            </div>
+          </div>
+          <div class="row copyright_tag">
+            <div class="col-md-12">
+              <h4>Copyright &copy; 2018 Art Gallery Brought To You By <a href="https://www.projectworlds.in" target="_blank">Projectworlds</a></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
