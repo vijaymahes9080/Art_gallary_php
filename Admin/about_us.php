@@ -2,13 +2,7 @@
 
 
 <?php
-
-		$link=mysqli_connect("localhost","root","","WT_LAB");
-		if(mysqli_connect_error())
-		{
-			echo "Connection error".mysqli_connect_error();
-			exit;
-		}
+		include('conn.php');
 		$msg="";
 		if(isset($_POST['about_desc']))
 		{
