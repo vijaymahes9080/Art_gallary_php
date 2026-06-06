@@ -55,7 +55,7 @@ Import database art_gallry.sql from downloaded folder(inside database)
 <div id="panel-2292-1-0-0" class="so-panel widget widget_text panel-first-child panel-last-child" data-index="1">
 <div class="textwidget">
 <div class="" data-lock-id="onpLock358715">
-<h3><a href="https://github.com/projectworlds32/online-art-gallery-in-php/archive/master.zip">Download project</a></h3>
+<h3><a href="https://github.com/vijaymahes9080/Art_gallary_php/archive/refs/heads/main.zip">Download project</a></h3>
 </div>
 </div>
 </div>
